@@ -4,6 +4,11 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+/**
+ * Classe genérica responsável pela manipulação da EntityManager
+ * @author Lucian Schirmer
+ *
+ */
 public class DAO {
 	
 	private EntityManagerFactory emf; 
@@ -13,8 +18,6 @@ public class DAO {
 	}
 	 
 	public EntityManager getEntityManager(){
- 
-		//responsavel pela persistencia
 		return emf.createEntityManager();
 	}
 }

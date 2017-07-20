@@ -32,6 +32,9 @@ public class ViagemBean {
 	@Inject
 	private WsSelfBookingService ws;
 
+	/**
+	 * Método de inicialização do bean. Realiza o request das solicitações de viagem
+	 */
 	@PostConstruct
 	private void getResponse() {
 

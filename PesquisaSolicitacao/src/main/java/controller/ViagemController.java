@@ -10,6 +10,11 @@ import br.com.lemontech.selfbooking.wsselfbooking.beans.aereo.Aereo;
 import br.com.lemontech.selfbooking.wsselfbooking.beans.aereo.AereoSeguimento;
 import br.com.lemontech.selfbooking.wsselfbooking.services.response.PesquisarSolicitacaoResponse;
 
+/**
+ * Classe responsável pela validação e chamada da persistência dos dados obtidos no response do web service.
+ * @author Lucian Schirmer
+ *
+ */
 public class ViagemController {
 	
 	private ViagemDAO viagemDAO = new ViagemDAO();
@@ -61,8 +66,9 @@ public class ViagemController {
 						viagem.setCidadeOrigem(aereoSeguimento.getCidadeOrigem());
 						viagem.setCidadeDestino(aereoSeguimento.getCidadeDestino());
 
-						// Chama o viagemDAO para persistencia do objeto no
-						// banco de dados
+						
+						
+						// Chama o viagemDAO para persistencia do objeto no banco de dados
 						viagemDAO.salvar(viagem);
 						viagens.add(viagem);
 					}
