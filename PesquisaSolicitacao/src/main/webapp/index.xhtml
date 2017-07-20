@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Desafio Lemontech - Consulta de solicitações de viagens</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</h:head>
+
+<h:body>
+	<h:form>
+	
+	<div style="margin-bottom: 50px; text-align: center">
+		<h2>Consulta de solicitações de viagens</h2>
+		<h4>As viagens listadas aqui serão automaticamente inseridas na base de dados</h4>
+	</div>
+	
+	<p:dataTable value="#{viagemBean.viagens}" var="viagem" styleClass="table">
+			<p:column headerText="ID Solicitação">
+				<h:outputText value="#{viagem.idSolicitacao}" />
+			</p:column>
+			<p:column headerText="Passageiro">
+				<h:outputText value="#{viagem.nomePassageiro}" />
+			</p:column>
+			<p:column headerText="Companhia Aérea">
+				<h:outputText value="#{viagem.ciaAerea}" />
+			</p:column>
+			<p:column headerText="Data/Hora Saída">
+				<h:outputText value="#{viagem.dataSaida.time}">
+					<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
+				</h:outputText>
+			</p:column>
+			<p:column headerText="Data/Hora Chegada">
+				<h:outputText value="#{viagem.dataChegada.time}">
+  					<f:convertDateTime pattern="dd/MM/yyyy HH:mm" />
+				</h:outputText>
+			</p:column>
+			<p:column headerText="Cidade Origem">
+				<h:outputText value="#{viagem.cidadeOrigem}" />
+			</p:column>
+			<p:column headerText="Cidade Destino">
+				<h:outputText value="#{viagem.cidadeDestino}" />
+			</p:column>
+		</p:dataTable>
+	</h:form>
+</h:body>
+</html>
